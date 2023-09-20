@@ -24,7 +24,7 @@ int n=0;
 Cliente *clientes = NULL;
 
 int main (){
-	
+	setlocale(LC_ALL,"spanish");
 	int *opcion = new int;
 	clientes = new Cliente[1]; 
 	do{

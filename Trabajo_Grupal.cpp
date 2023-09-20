@@ -5,17 +5,20 @@ Anco Porras Jhean Pier Julio
 */
 #include <iostream>
 #include <string.h>
+
 using namespace std;
 void menu(int *&a);
 void casos (int*&a);
 void MostCliente();
 void RegCliente();
+
 struct Cliente{
   char nombre [30];
   char apellido[30];
   char dni [20];
   char telefono [15];
   char edad [5];
+
 };
 int n=0;
 Cliente *clientes = NULL;
@@ -39,6 +42,7 @@ void RegCliente (){
   for (int i = 0; i < n; i++) {
   temp[i] = clientes[i];
   }
+	
   do {
     cin.ignore();
     cout << "Ingrese nombre del cliente (máximo 20 caracteres): ";
@@ -50,6 +54,7 @@ void RegCliente (){
           cout << "El nombre es demasiado largo. Debe tener un máximo de 20 caracteres."<<endl;
         }
     }while (strlen(temp[n].nombre) == 0 || strlen(temp[n].nombre) > 20);  
+	
   do{
       cout<<"Ingrese apellido del cliente: ";
       cin.getline(temp[n].apellido,30);
@@ -59,6 +64,7 @@ void RegCliente (){
           if(strlen(temp[n].apellido) > 20)
             cout<<"El apellido es demasiado largo. Debe tener un máximo de 20 caracteres."<<endl;
   }while (strlen(temp[n].apellido) == 0 || strlen(temp[n].apellido) > 20); 
+	
   do{
     cout<<"Ingrese DNI del cliente: ";
     cin.getline(temp[n].dni,20);
@@ -68,6 +74,7 @@ void RegCliente (){
       if(strlen(temp[n].dni) > 8)
         cout<<"El DNI tienes demasiado caracteres. Debe tener un máximo de 8 caracteres."<<endl;
   }while(strlen(temp[n].dni) == 0 || strlen(temp[n].dni) > 8);
+	
   do{
     cout<<"Ingrese telefono del cliente: ";
     cin.getline(temp[n].telefono,15);
@@ -77,6 +84,7 @@ void RegCliente (){
         if(strlen(temp[n].telefono) > 9)
           cout<<"El número de telefono es demasiado largo. Debe tener un máximo de 9 caracteres."<< endl;
   }while (strlen(temp[n].telefono) == 0 || strlen(temp[n].telefono) > 9);
+	
   do{
     cout<<"Ingrese edad del cliente: ";
     cin.getline(temp[n].edad,5);
